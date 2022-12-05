@@ -1,9 +1,11 @@
 const Run = (instructions, stacks) => {
     instructions.forEach(instruction => {
-        const test = instruction.match(/\d/g); // problem
-        console.log(test);
+        const cleanedInstructions = instruction.split(" ").filter(x => !isNaN(parseInt(x)));
+        for (let index = 0; index < parseInt(cleanedInstructions[0]); index++) {
+            const elementToAdd = stacks[(parseInt(cleanedInstructions[1]) - 1)].pop();
+            stacks[(parseInt(cleanedInstructions[2]) - 1)].push(elementToAdd);
+        }
     });
-
     const result = stacks.reduce((message, val) => message + val.pop(), '');
     console.log(result);
 }
@@ -512,14 +514,14 @@ Run([
     'move 1 from 3 to 6',
     'move 4 from 5 to 7'
 ],
-[
-    ['F', 'C', 'P', 'G', 'Q', 'R'],
-    ['W', 'T', 'C', 'P'],
-    ['B', 'H', 'P', 'M', 'C'],
-    ['L', 'T', 'Q', 'S', 'M', 'P', 'R'],
-    ['P', 'H', 'J', 'Z', 'V', 'G', 'N'],
-    ['D', 'P', 'J'],
-    ['L', 'G', 'P', 'Z', 'F', 'J', 'T', 'R'],
-    ['N', 'L', 'H', 'C', 'F', 'P', 'T', 'J'],
-    ['G', 'V', 'Z', 'Q', 'H', 'T', 'C', 'W']
-]);
+    [
+        ['F', 'C', 'P', 'G', 'Q', 'R'],
+        ['W', 'T', 'C', 'P'],
+        ['B', 'H', 'P', 'M', 'C'],
+        ['L', 'T', 'Q', 'S', 'M', 'P', 'R'],
+        ['P', 'H', 'J', 'Z', 'V', 'G', 'N'],
+        ['D', 'P', 'J'],
+        ['L', 'G', 'P', 'Z', 'F', 'J', 'T', 'R'],
+        ['N', 'L', 'H', 'C', 'F', 'P', 'T', 'J'],
+        ['G', 'V', 'Z', 'Q', 'H', 'T', 'C', 'W']
+    ]);
