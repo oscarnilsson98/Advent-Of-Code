@@ -1,9 +1,69 @@
 const Run = (inputList) => {
-    for (let index = 0; index < inputList.length; index++) {
-        const element = inputList[index].split("");
-        // loop thought element
-        // check backwards with -1, +2, -length and +length to find all the areas around the tree
+    for (let rowIndex = 0; rowIndex < inputList.length; rowIndex++) {
+        const row = inputList[rowIndex].split("");
+        inputList[rowIndex] = row;
+        for (let columnIndex = 0; columnIndex < row.length; columnIndex++) {
+            const cell = parseInt(row[columnIndex]);
+            inputList[rowIndex][columnIndex] = cell;
+        }
     }
+
+    const total = inputList.reduce((memo, row, y) => {
+        row.forEach((height, x) => {
+            if (x === 0 || y === 0 || x === (inputList.length - 1) || y === (row.length - 1)) {
+                memo += 1;
+                return;
+            }
+
+            let reducedTop = inputList.filter((val, index) => index < y).reduce((highestVal, val) => {
+                if (val[x] > highestVal) {
+                    return val[x];
+                }
+                return highestVal;
+            }, 0);
+            if (height > reducedTop) {
+                memo += 1;
+                return;
+            }
+
+            let reducedBottom = inputList.filter((val, index) => index > y).reduce((highestVal, val) => {
+                if (val[x] > highestVal) {
+                    return val[x];
+                }
+                return highestVal;
+            }, 0);
+            if (height > reducedBottom) {
+                memo += 1;
+                return;
+            }
+
+            let reducedRight = row.filter((val, index) => index > x).reduce((highestVal, val) => {
+                if (val > highestVal) {
+                    return val;
+                }
+                return highestVal;
+            }, 0);
+            if (height > reducedRight) {
+                memo += 1;
+                return;
+            }
+
+            let reducedLeft = row.filter((val, index) => index < x).reduce((highestVal, val) => {
+                if (val > highestVal) {
+                    return val;
+                }
+                return highestVal;
+            }, 0);
+            if (height > reducedLeft) {
+                memo += 1;
+                return;
+            }
+        });
+
+        return memo;
+    }, 0);
+
+    console.log(total);
 }
 
 Run([
@@ -105,5 +165,5 @@ Run([
     '001233311232134334100401400151532231322435145412132433235254313414243334103312232304403111313321210',
     '110213022233310011220103432114343112114222424442543155552411511144115122143322304023012132213011210',
     '000220123220323122321103444304134551331233141552114422121151224211122042434324042030120133230110110',
-    '020120232301110331441234422110132302233413123211331413433254521355004032312110222131010330301222211,'
+    '020120232301110331441234422110132302233413123211331413433254521355004032312110222131010330301222211'
 ]);
