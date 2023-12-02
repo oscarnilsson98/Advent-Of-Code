@@ -1,0 +1,15 @@
+/Users/oscarnilsson/Projects/Advent Of Code/2023/1/bin/Debug/net8.0/1
+/Users/oscarnilsson/Projects/Advent Of Code/2023/1/bin/Debug/net8.0/1.deps.json
+/Users/oscarnilsson/Projects/Advent Of Code/2023/1/bin/Debug/net8.0/1.runtimeconfig.json
+/Users/oscarnilsson/Projects/Advent Of Code/2023/1/bin/Debug/net8.0/1.dll
+/Users/oscarnilsson/Projects/Advent Of Code/2023/1/bin/Debug/net8.0/1.pdb
+/Users/oscarnilsson/Projects/Advent Of Code/2023/1/obj/Debug/net8.0/1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/oscarnilsson/Projects/Advent Of Code/2023/1/obj/Debug/net8.0/1.AssemblyInfoInputs.cache
+/Users/oscarnilsson/Projects/Advent Of Code/2023/1/obj/Debug/net8.0/1.AssemblyInfo.cs
+/Users/oscarnilsson/Projects/Advent Of Code/2023/1/obj/Debug/net8.0/1.csproj.CoreCompileInputs.cache
+/Users/oscarnilsson/Projects/Advent Of Code/2023/1/obj/Debug/net8.0/1.sourcelink.json
+/Users/oscarnilsson/Projects/Advent Of Code/2023/1/obj/Debug/net8.0/1.dll
+/Users/oscarnilsson/Projects/Advent Of Code/2023/1/obj/Debug/net8.0/refint/1.dll
+/Users/oscarnilsson/Projects/Advent Of Code/2023/1/obj/Debug/net8.0/1.pdb
+/Users/oscarnilsson/Projects/Advent Of Code/2023/1/obj/Debug/net8.0/1.genruntimeconfig.cache
+/Users/oscarnilsson/Projects/Advent Of Code/2023/1/obj/Debug/net8.0/ref/1.dll
