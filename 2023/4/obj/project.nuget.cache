@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "YD+HZRqizRJgD48/sCCi4Jmg23W8OAD2N3DWcsawSISGJMRQOZ5nOOIUgt13jzoRrNN/+eeZVUYrUKhdLok2Rw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\oscnil\\source\\repos\\Advent-Of-Code\\2023\\4\\4.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://nuget.episerver.com/feed/packages.svc/'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    },
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://nuget.biltema.org/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}
