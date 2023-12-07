@@ -4,7 +4,7 @@ class Program
 {
     private const string filePath = "./input.txt";
 
-    enum HandTyp
+    enum HandType
     {
         fiveOfAKind = 1,
         fourOfAKind = 2,
@@ -17,7 +17,7 @@ class Program
 
     static void Main(string[] args)
     {
-        // Part1();
+        Part1();
         Part2();
     }
 
@@ -31,7 +31,7 @@ class Program
         {
             var hand = item.Split(" ")[0];
             var bid = int.Parse(item.Split(" ")[1]);
-            var type = GetHandType(hand);
+            var type = GetHandTypee(hand);
 
             handDictionary.Add(hand, (bid, (int)type));
         }
@@ -45,13 +45,13 @@ class Program
         Console.WriteLine(result);
     }
 
-    static HandTyp GetHandType(string hand)
+    static HandType GetHandTypee(string hand)
     {
         List<char> characters = [.. hand];
 
         var charDictionary = new Dictionary<char, int>();
 
-        return GetHandTypeFromDictionary(charDictionary);
+        return GetHandTypeeFromDictionary(charDictionary);
     }
 
     static void Part2()
@@ -64,7 +64,7 @@ class Program
         {
             var hand = item.Split(" ")[0];
             var bid = int.Parse(item.Split(" ")[1]);
-            var type = GetHandTypePart2(hand);
+            var type = GetHandTypeePart2(hand);
 
             handDictionary.Add(hand, (bid, type));
         }
@@ -78,7 +78,7 @@ class Program
         Console.WriteLine(result);
     }
 
-    static int GetHandTypePart2(string hand)
+    static int GetHandTypeePart2(string hand)
     {
         List<char> characters = [.. hand];
 
@@ -91,7 +91,7 @@ class Program
 
         var possibleTypes = new List<int>
         {
-            (int)GetHandTypeFromDictionary(charDictionary)
+            (int)GetHandTypeeFromDictionary(charDictionary)
         };
 
         if (charDictionary.TryGetValue('J', out int value))
@@ -102,7 +102,7 @@ class Program
 
                 replacedCharDictionary[current.Key] = current.Value + value;
 
-                possibleTypes.Add((int)GetHandTypeFromDictionary(replacedCharDictionary));
+                possibleTypes.Add((int)GetHandTypeeFromDictionary(replacedCharDictionary));
             }
         }
 
@@ -111,37 +111,37 @@ class Program
         return firsto;
     }
 
-    static HandTyp GetHandTypeFromDictionary(Dictionary<char, int> charDictionary)
+    static HandType GetHandTypeeFromDictionary(Dictionary<char, int> charDictionary)
     {
         if (charDictionary.Count == 1)
         {
-            return HandTyp.fiveOfAKind;
+            return HandType.fiveOfAKind;
         }
 
         if (charDictionary.Count == 2)
         {
             if (charDictionary.ContainsValue(4))
             {
-                return HandTyp.fourOfAKind;
+                return HandType.fourOfAKind;
             }
-            return HandTyp.fullHouse;
+            return HandType.fullHouse;
         }
 
         if (charDictionary.Count == 3)
         {
             if (charDictionary.ContainsValue(3))
             {
-                return HandTyp.threeOfAKind;
+                return HandType.threeOfAKind;
             }
-            return HandTyp.twoPair;
+            return HandType.twoPair;
         }
 
         if (charDictionary.Count == 4)
         {
-            return HandTyp.onePair;
+            return HandType.onePair;
         }
 
-        return HandTyp.highCard;
+        return HandType.highCard;
     }
 }
 
