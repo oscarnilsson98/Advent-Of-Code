@@ -10,7 +10,7 @@ class Program
 
     static void Main()
     {
-        // Part1();
+        Part1();
         Part2();
     }
 
@@ -23,9 +23,7 @@ class Program
 
         HashSet<(int row, int column, char direction)> passedSpots = [];
 
-        passedSpots.Add((0, 0, '>'));
-        // passedSpots = MoveRight(input, 0, 0, passedSpots);
-        passedSpots = MoveDown(input, 0, 0, passedSpots);
+        passedSpots = MoveRight(input, 0, -1, passedSpots);
 
         Console.WriteLine(passedSpots.Select(x => new { x.row, x.column }).Distinct().Count());
     }
